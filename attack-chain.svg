@@ -1,0 +1,187 @@
+<svg viewBox="0 0 960 720" xmlns="http://www.w3.org/2000/svg" width="960" height="720">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#0D1117"/>
+    </linearGradient>
+    <linearGradient id="redGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2D20"/>
+      <stop offset="100%" style="stop-color:#FF6B35"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1F6FEB"/>
+      <stop offset="100%" style="stop-color:#58A6FF"/>
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#1A7F37"/>
+      <stop offset="100%" style="stop-color:#3FB950"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2.5" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <filter id="softglow">
+      <feGaussianBlur stdDeviation="8" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+    <marker id="arrowRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#FF2D20"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#58A6FF"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#3FB950"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#FF8C00"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="960" height="720" fill="url(#bgGrad)"/>
+
+  <!-- Subtle grid -->
+  <g opacity="0.06">
+    <line x1="0" y1="60" x2="960" y2="60" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="120" x2="960" y2="120" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="180" x2="960" y2="180" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="240" x2="960" y2="240" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="300" x2="960" y2="300" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="360" x2="960" y2="360" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="420" x2="960" y2="420" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="480" x2="960" y2="480" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="540" x2="960" y2="540" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="600" x2="960" y2="600" stroke="#8B949E" stroke-width="0.5"/>
+    <line x1="0" y1="660" x2="960" y2="660" stroke="#8B949E" stroke-width="0.5"/>
+  </g>
+
+  <!-- Title -->
+  <text x="480" y="38" font-family="'Courier New', monospace" font-size="18" font-weight="bold" fill="#F0F6FC" text-anchor="middle" filter="url(#glow)">DIRTY FRAG — ATTACK CHAIN VISUALIZATION</text>
+  <text x="480" y="56" font-family="'Courier New', monospace" font-size="10" fill="#8B949E" text-anchor="middle">NullAI Lab · Analysis of original research by Hyunwoo Kim (@v4bel)</text>
+
+  <!-- ═══════════════════════════════ PATH LABELS ═══════════════════════════ -->
+  <rect x="20" y="75" width="420" height="22" rx="3" fill="#FF2D2020" stroke="#FF2D20" stroke-width="1"/>
+  <text x="230" y="90" font-family="'Courier New', monospace" font-size="11" fill="#FF2D20" text-anchor="middle" font-weight="bold">PATH A — xfrm-ESP (CVE-2026-43284) · Requires CLONE_NEWUSER</text>
+
+  <rect x="520" y="75" width="420" height="22" rx="3" fill="#58A6FF20" stroke="#58A6FF" stroke-width="1"/>
+  <text x="730" y="90" font-family="'Courier New', monospace" font-size="11" fill="#58A6FF" text-anchor="middle" font-weight="bold">PATH B — RxRPC/rxkad (CVE-2026-43500) · No privileges needed</text>
+
+  <!-- DIVIDER -->
+  <line x1="480" y1="70" x2="480" y2="660" stroke="#30363D" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PATH A NODES
+  ════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- A1: Namespace Setup -->
+  <rect x="40" y="115" width="360" height="62" rx="6" fill="#161B22" stroke="#FF2D20" stroke-width="1.5"/>
+  <rect x="40" y="115" width="4" height="62" rx="2" fill="#FF2D20"/>
+  <text x="56" y="132" font-family="'Courier New', monospace" font-size="11" fill="#FF2D20" font-weight="bold">① NAMESPACE SETUP</text>
+  <text x="56" y="149" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">unshare(CLONE_NEWUSER | CLONE_NEWNET)</text>
+  <text x="56" y="165" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">→ gains CAP_NET_ADMIN in netns · lo brought UP</text>
+  <!-- Arrow -->
+  <line x1="220" y1="177" x2="220" y2="200" stroke="#FF2D20" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <!-- A2: XFRM SA Install -->
+  <rect x="40" y="200" width="360" height="72" rx="6" fill="#161B22" stroke="#FF2D20" stroke-width="1.5"/>
+  <rect x="40" y="200" width="4" height="72" rx="2" fill="#FF2D20"/>
+  <text x="56" y="218" font-family="'Courier New', monospace" font-size="11" fill="#FF2D20" font-weight="bold">② XFRM SA INSTALLATION (×48 SAs)</text>
+  <text x="56" y="234" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">XFRM_MSG_NEWSA via netlink · SPI=0xDEADBE10+i</text>
+  <text x="56" y="250" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">AES-CBC + HMAC-SHA256 · UDP encap port 4500</text>
+  <text x="56" y="262" font-family="'Courier New', monospace" font-size="10" fill="#FF8C00">► seq_hi = 4 controlled bytes to write</text>
+  <!-- Arrow -->
+  <line x1="220" y1="272" x2="220" y2="295" stroke="#FF2D20" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <!-- A3: splice page-cache ref -->
+  <rect x="40" y="295" width="360" height="72" rx="6" fill="#161B22" stroke="#FF2D20" stroke-width="1.5"/>
+  <rect x="40" y="295" width="4" height="72" rx="2" fill="#FF2D20"/>
+  <text x="56" y="313" font-family="'Courier New', monospace" font-size="11" fill="#FF2D20" font-weight="bold">③ PAGE-CACHE REFERENCE SETUP</text>
+  <text x="56" y="329" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">open("/usr/bin/su", O_RDONLY) → pipe()</text>
+  <text x="56" y="345" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">vmsplice(header) + splice(file→pipe)</text>
+  <text x="56" y="357" font-family="'Courier New', monospace" font-size="10" fill="#FF8C00">► pipe buffer → page-cache page ref (read-only!)</text>
+  <!-- Arrow -->
+  <line x1="220" y1="367" x2="220" y2="390" stroke="#FF2D20" stroke-width="1.5" marker-end="url(#arrowRed)"/>
+
+  <!-- A4: Trigger decrypt -->
+  <rect x="40" y="390" width="360" height="72" rx="6" fill="#161B22" stroke="#FF2D20" stroke-width="1.5"/>
+  <rect x="40" y="390" width="4" height="72" rx="2" fill="#FF2D20"/>
+  <text x="56" y="408" font-family="'Courier New', monospace" font-size="11" fill="#FF2D20" font-weight="bold">④ TRIGGER IN-PLACE DECRYPTION</text>
+  <text x="56" y="424" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">UDP socket w/ UDP_ENCAP_ESPINUDP → send ESP pkt</text>
+  <text x="56" y="440" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">Kernel: xfrm decrypt in-place → writes seq_hi</text>
+  <text x="56" y="452" font-family="'Courier New', monospace" font-size="10" fill="#FF8C00">► 4 controlled bytes written to page-cache</text>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       PATH B NODES
+  ════════════════════════════════════════════════════════════════════════ -->
+
+  <!-- B1: Key Install -->
+  <rect x="540" y="115" width="380" height="62" rx="6" fill="#161B22" stroke="#58A6FF" stroke-width="1.5"/>
+  <rect x="540" y="115" width="4" height="62" rx="2" fill="#58A6FF"/>
+  <text x="556" y="132" font-family="'Courier New', monospace" font-size="11" fill="#58A6FF" font-weight="bold">① RXKAD KEY INSTALLATION</text>
+  <text x="556" y="149" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">add_key("rxrpc", token_with_session_key)</text>
+  <text x="556" y="165" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">→ 8-byte DES session key embedded in token</text>
+  <!-- Arrow -->
+  <line x1="730" y1="177" x2="730" y2="200" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- B2: Userspace brute-force -->
+  <rect x="540" y="200" width="380" height="72" rx="6" fill="#161B22" stroke="#58A6FF" stroke-width="1.5"/>
+  <rect x="540" y="200" width="4" height="72" rx="2" fill="#58A6FF"/>
+  <text x="556" y="218" font-family="'Courier New', monospace" font-size="11" fill="#58A6FF" font-weight="bold">② USERSPACE pcbc(fcrypt) KEY SEARCH</text>
+  <text x="556" y="234" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">fcrypt_decrypt reimplemented in userspace</text>
+  <text x="556" y="250" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">Finds key K: decrypt(ciphertext,K) = desired bytes</text>
+  <text x="556" y="262" font-family="'Courier New', monospace" font-size="10" fill="#FF8C00">► No kernel interaction during key search</text>
+  <!-- Arrow -->
+  <line x1="730" y1="272" x2="730" y2="295" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- B3: Fake server + splice -->
+  <rect x="540" y="295" width="380" height="72" rx="6" fill="#161B22" stroke="#58A6FF" stroke-width="1.5"/>
+  <rect x="540" y="295" width="4" height="72" rx="2" fill="#58A6FF"/>
+  <text x="556" y="313" font-family="'Courier New', monospace" font-size="11" fill="#58A6FF" font-weight="bold">③ FAKE SERVER + PAGE-CACHE SPLICE</text>
+  <text x="556" y="329" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">AF_RXRPC client ↔ plain UDP fake AFS server</text>
+  <text x="556" y="345" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">vmsplice(wire_hdr) + splice(file→pipe)</text>
+  <text x="556" y="357" font-family="'Courier New', monospace" font-size="10" fill="#FF8C00">► Malicious DATA pkt built with valid cksum</text>
+  <!-- Arrow -->
+  <line x1="730" y1="367" x2="730" y2="390" stroke="#58A6FF" stroke-width="1.5" marker-end="url(#arrowBlue)"/>
+
+  <!-- B4: Trigger rxkad decrypt -->
+  <rect x="540" y="390" width="380" height="72" rx="6" fill="#161B22" stroke="#58A6FF" stroke-width="1.5"/>
+  <rect x="540" y="390" width="4" height="72" rx="2" fill="#58A6FF"/>
+  <text x="556" y="408" font-family="'Courier New', monospace" font-size="11" fill="#58A6FF" font-weight="bold">④ TRIGGER rxkad_verify_packet_1()</text>
+  <text x="556" y="424" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">Kernel receives DATA → cksum valid → decrypt</text>
+  <text x="556" y="440" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">pcbc(fcrypt) in-place on page-cache page</text>
+  <text x="556" y="452" font-family="'Courier New', monospace" font-size="10" fill="#FF8C00">► Chosen plaintext bytes written to cache</text>
+
+  <!-- ═══════ CONVERGE ARROWS ═══════ -->
+  <line x1="220" y1="462" x2="220" y2="510" stroke="#FF2D20" stroke-width="1.5"/>
+  <line x1="730" y1="462" x2="730" y2="510" stroke="#58A6FF" stroke-width="1.5"/>
+  <line x1="220" y1="510" x2="730" y2="510" stroke="#3FB950" stroke-width="1.5"/>
+  <line x1="480" y1="510" x2="480" y2="530" stroke="#3FB950" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- ═══════ SHARED FINAL STAGES ═══════ -->
+
+  <!-- Page cache written -->
+  <rect x="190" y="530" width="580" height="52" rx="6" fill="#1A7F3720" stroke="#3FB950" stroke-width="2"/>
+  <text x="480" y="551" font-family="'Courier New', monospace" font-size="12" fill="#3FB950" text-anchor="middle" font-weight="bold">⑤  PAGE CACHE OVERWRITTEN WITH MINIMAL ROOT-SHELL ELF (192 bytes)</text>
+  <text x="480" y="569" font-family="'Courier New', monospace" font-size="10" fill="#8B949E" text-anchor="middle">/usr/bin/su  [ELF header 0x00–0xBF patched with setuid(0)+setgid(0)+execve("/bin/sh")]</text>
+  <!-- Arrow -->
+  <line x1="480" y1="582" x2="480" y2="605" stroke="#3FB950" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <!-- Execute -->
+  <rect x="190" y="605" width="580" height="42" rx="6" fill="#1A7F3720" stroke="#3FB950" stroke-width="2"/>
+  <text x="480" y="623" font-family="'Courier New', monospace" font-size="12" fill="#3FB950" text-anchor="middle" font-weight="bold">⑥  EXECUTE  /usr/bin/su  →  uid=0  gid=0  #  (ROOT SHELL)</text>
+  <text x="480" y="638" font-family="'Courier New', monospace" font-size="10" fill="#8B949E" text-anchor="middle">Cleanup: echo 3 &gt; /proc/sys/vm/drop_caches  (restore from disk)</text>
+
+  <!-- ═══ BOTTOM BAR ═══ -->
+  <rect x="0" y="680" width="960" height="40" fill="#161B22"/>
+  <line x1="0" y1="680" x2="960" y2="680" stroke="#30363D" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="30" y="692" width="10" height="10" fill="#FF2D20" rx="2"/>
+  <text x="46" y="702" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">xfrm-ESP path (RHEL/Fedora/openSUSE)</text>
+  <rect x="280" y="692" width="10" height="10" fill="#58A6FF" rx="2"/>
+  <text x="296" y="702" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">RxRPC path (Ubuntu w/ AppArmor)</text>
+  <rect x="530" y="692" width="10" height="10" fill="#3FB950" rx="2"/>
+  <text x="546" y="702" font-family="'Courier New', monospace" font-size="10" fill="#8B949E">Shared exploitation path (all distros)</text>
+  <text x="900" y="702" font-family="'Courier New', monospace" font-size="9" fill="#30363D" text-anchor="end">NullAI Lab 2026</text>
+</svg>

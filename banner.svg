@@ -1,0 +1,40 @@
+<svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg" width="900" height="200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0D1117"/>
+      <stop offset="100%" style="stop-color:#161B22"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#FF2D20"/>
+      <stop offset="100%" style="stop-color:#FF6B35"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="900" height="200" fill="url(#bg)" rx="8"/>
+  <!-- Grid lines -->
+  <line x1="0" y1="40" x2="900" y2="40" stroke="#21262D" stroke-width="1"/>
+  <line x1="0" y1="160" x2="900" y2="160" stroke="#21262D" stroke-width="1"/>
+  <line x1="60" y1="0" x2="60" y2="200" stroke="#21262D" stroke-width="1"/>
+  <!-- Red accent bar -->
+  <rect x="0" y="0" width="4" height="200" fill="url(#accent)" rx="2"/>
+  <!-- NullAI Lab logo text -->
+  <text x="80" y="70" font-family="'Courier New', monospace" font-size="13" fill="#8B949E" letter-spacing="4">NULLAI LAB · SECURITY RESEARCH</text>
+  <!-- Main title -->
+  <text x="78" y="120" font-family="'Courier New', monospace" font-size="42" font-weight="bold" fill="#F0F6FC" filter="url(#glow)" letter-spacing="-1">Dirty Frag</text>
+  <text x="78" y="148" font-family="'Courier New', monospace" font-size="16" fill="#8B949E">Universal Linux LPE · Page-Cache Write Primitive Chain</text>
+  <!-- CVE badges -->
+  <rect x="580" y="80" width="160" height="26" rx="4" fill="#FF2D2015" stroke="#FF2D20" stroke-width="1"/>
+  <text x="660" y="97" font-family="'Courier New', monospace" font-size="11" fill="#FF2D20" text-anchor="middle" font-weight="bold">CVE-2026-43284</text>
+  <rect x="750" y="80" width="130" height="26" rx="4" fill="#FF8C0015" stroke="#FF8C00" stroke-width="1"/>
+  <text x="815" y="97" font-family="'Courier New', monospace" font-size="11" fill="#FF8C00" text-anchor="middle" font-weight="bold">CVE-2026-43500</text>
+  <!-- Status indicators -->
+  <circle cx="588" cy="120" r="5" fill="#3FB950"/>
+  <text x="600" y="124" font-family="'Courier New', monospace" font-size="11" fill="#3FB950">xfrm-ESP: PATCHED</text>
+  <circle cx="588" cy="142" r="5" fill="#FF2D20"/>
+  <text x="600" y="146" font-family="'Courier New', monospace" font-size="11" fill="#FF2D20">rxrpc:    UNPATCHED</text>
+  <!-- Kernel logo area -->
+  <text x="820" y="165" font-family="'Courier New', monospace" font-size="52" fill="#21262D" font-weight="bold">λ</text>
+</svg>
