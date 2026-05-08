@@ -266,5 +266,3 @@ analysis, defensive tooling, and responsible disclosure education.
 <p align="center">
   <sub>Analysis produced by NullAI Lab · Original discovery by Hyunwoo Kim (@v4bel) · For educational purposes only</sub>
 </p>
-#   - N u l l A I - L A B - D i r t y - F r a g -  
- 
